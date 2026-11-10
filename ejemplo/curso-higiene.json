@@ -1,0 +1,140 @@
+{
+  "curso": {
+    "id": "ayb-higiene-01",
+    "titulo": "Higiene en el manejo de alimentos",
+    "descripcion": "Curso de ejemplo para validar el flujo: lavado de manos, temperaturas y contaminación cruzada. Contenido ilustrativo, no sustituye la normativa vigente.",
+    "idioma": "es-MX",
+    "duracion_min": 15,
+    "puntaje_aprobatorio": 80
+  },
+  "modulos": [
+    {
+      "id": "m1",
+      "titulo": "Lavado de manos",
+      "pantallas": [
+        {
+          "id": "m1-p1",
+          "tipo": "texto_imagen",
+          "titulo": "Por qué importa el lavado de manos",
+          "contenido": {
+            "texto": "Las manos son la vía más común por la que los microorganismos llegan a los alimentos.\nUn lavado correcto toma al menos 20 segundos y usa agua, jabón y secado con toalla desechable.",
+            "puntos": ["Mójate las manos y antebrazos", "Enjabona palmas, dorso, dedos y uñas", "Enjuaga y seca con toalla desechable"]
+          },
+          "imagen": { "etiquetas": ["higiene", "lavado de manos"], "archivo": "lavado-manos.svg", "alt": "Manos bajo el grifo con jabón" },
+          "animacion": "slide-up",
+          "fuente": "libreria/higiene/lavado.md#importancia"
+        },
+        {
+          "id": "m1-p2",
+          "tipo": "acordeon",
+          "titulo": "¿Cuándo lavarse las manos?",
+          "contenido": {
+            "items": [
+              { "encabezado": "Antes de empezar a trabajar", "texto": "Al iniciar el turno y después de colocarte el uniforme." },
+              { "encabezado": "Después de tocar alimentos crudos", "texto": "Carnes, pescados, huevo y verduras sin lavar pueden transferir microorganismos a otros alimentos." },
+              { "encabezado": "Después de ir al baño, toser o tocarte la cara", "texto": "Cualquier contacto con tu cuerpo o el cabello obliga a lavarte las manos de nuevo." },
+              { "encabezado": "Después de manejar basura o dinero", "texto": "Lávate antes de volver a tocar alimentos o superficies de trabajo." }
+            ]
+          },
+          "imagen": { "etiquetas": ["higiene"], "archivo": null },
+          "animacion": "escalonada",
+          "fuente": "libreria/higiene/lavado.md#cuando"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "titulo": "Control de temperaturas",
+      "pantallas": [
+        {
+          "id": "m2-p1",
+          "tipo": "texto_imagen",
+          "titulo": "La zona de peligro",
+          "contenido": {
+            "texto": "Entre 5 °C y 60 °C las bacterias se multiplican con rapidez. Los alimentos perecederos no deben permanecer en ese rango más tiempo del necesario.",
+            "puntos": ["Refrigerar por debajo de 5 °C", "Mantener caliente por encima de 60 °C", "Medir con termómetro, no a ojo"]
+          },
+          "imagen": { "etiquetas": ["temperatura", "refrigeración"], "archivo": "temperatura.svg", "alt": "Termómetro con zonas de temperatura" },
+          "animacion": "fade-in",
+          "fuente": "libreria/inocuidad/temperaturas.md#zona-peligro"
+        },
+        {
+          "id": "m2-p2",
+          "tipo": "acordeon",
+          "titulo": "Buenas prácticas de temperatura",
+          "contenido": {
+            "items": [
+              { "encabezado": "Recepción", "texto": "Verifica la temperatura de los productos refrigerados y congelados al recibirlos y rechaza los que no cumplan." },
+              { "encabezado": "Almacenamiento", "texto": "Guarda los productos crudos en la parte baja del refrigerador, debajo de los cocidos." },
+              { "encabezado": "Servicio", "texto": "Mantén los platillos calientes por encima de 60 °C hasta el momento de servir." }
+            ]
+          },
+          "imagen": { "etiquetas": [], "archivo": null },
+          "animacion": "escalonada",
+          "fuente": "libreria/inocuidad/temperaturas.md#practicas"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "titulo": "Contaminación cruzada",
+      "pantallas": [
+        {
+          "id": "m3-p1",
+          "tipo": "texto_imagen",
+          "titulo": "Qué es la contaminación cruzada",
+          "contenido": {
+            "texto": "Ocurre cuando los microorganismos pasan de un alimento crudo, de una superficie o de las manos a un alimento listo para comer.\nLa mejor defensa es separar: tablas, cuchillos, recipientes y áreas de trabajo."
+          },
+          "imagen": { "etiquetas": ["contaminación cruzada"], "archivo": "contaminacion-cruzada.svg", "alt": "Alimento crudo separado de alimento listo para comer" },
+          "animacion": "zoom",
+          "fuente": "libreria/inocuidad/contaminacion-cruzada.md#definicion"
+        }
+      ]
+    }
+  ],
+  "evaluacion": {
+    "preguntas": [
+      {
+        "id": "q1",
+        "tipo": "opcion_multiple",
+        "enunciado": "¿Cuánto debe durar, como mínimo, el lavado de manos?",
+        "opciones": ["5 segundos", "10 segundos", "20 segundos"],
+        "correcta": 2,
+        "retroalimentacion": "El lavado correcto toma al menos 20 segundos."
+      },
+      {
+        "id": "q2",
+        "tipo": "opcion_multiple",
+        "enunciado": "¿Cuándo debes lavarte las manos?",
+        "opciones": ["Solo al terminar el turno", "Después de tocar alimentos crudos", "Solo si se ven sucias"],
+        "correcta": 1,
+        "retroalimentacion": "Tras tocar alimentos crudos, aunque las manos parezcan limpias."
+      },
+      {
+        "id": "q3",
+        "tipo": "opcion_multiple",
+        "enunciado": "¿Qué rango de temperatura se considera zona de peligro?",
+        "opciones": ["Menos de 5 °C", "Entre 5 °C y 60 °C", "Más de 60 °C"],
+        "correcta": 1,
+        "retroalimentacion": "Entre 5 °C y 60 °C las bacterias se multiplican con rapidez."
+      },
+      {
+        "id": "q4",
+        "tipo": "opcion_multiple",
+        "enunciado": "¿Dónde se guardan los productos crudos en el refrigerador?",
+        "opciones": ["Arriba, sobre los alimentos cocidos", "Abajo, debajo de los cocidos", "Da igual el lugar"],
+        "correcta": 1,
+        "retroalimentacion": "Abajo, para que sus jugos no goteen sobre alimentos listos para comer."
+      },
+      {
+        "id": "q5",
+        "tipo": "opcion_multiple",
+        "enunciado": "¿Cuál es la mejor forma de evitar la contaminación cruzada?",
+        "opciones": ["Usar la misma tabla y lavarla al final del día", "Separar tablas y utensilios para crudos y listos para comer", "Cubrir el alimento crudo con plástico"],
+        "correcta": 1,
+        "retroalimentacion": "Separar utensilios y áreas evita que los microorganismos pasen de un alimento a otro."
+      }
+    ]
+  }
+}

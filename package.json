@@ -1,0 +1,84 @@
+{
+  "name": "generador-scorm",
+  "productName": "Generador SCORM",
+  "version": "1.0.0",
+  "description": "Generador de cursos SCORM 1.2 offline con player de validaci????n integrado",
+  "main": "main.js",
+  "author": "Academia A&B",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.academia.generadorscorm",
+    "productName": "Generador SCORM",
+    "files": [
+      "main.js",
+      "src/**",
+      "runtime/**",
+      "player/**",
+      "editor/**",
+      "home/**",
+      "utilidades/**",
+      "shared/**",
+      "package.json",
+      "node_modules/**",
+      "!node_modules/@node-llama-cpp/win-x64-cuda/**",
+      "!node_modules/@node-llama-cpp/win-x64-cuda-ext/**",
+      "!node_modules/@node-llama-cpp/win-x64-vulkan/**",
+      "!node_modules/@node-llama-cpp/win-arm64/**",
+      "!node_modules/pdfjs-dist/legacy/**",
+      "!node_modules/pdfjs-dist/web/**",
+      "!node_modules/pdfjs-dist/types/**",
+      "!node_modules/pdfjs-dist/image_decoders/**",
+      "!node_modules/pdfjs-dist/**/*.map",
+      "!node_modules/tesseract.js-core/tesseract-core.*",
+      "!node_modules/tesseract.js-core/tesseract-core-simd.*",
+      "!node_modules/tesseract.js-core/tesseract-core-relaxedsimd.*",
+      "!node_modules/@tesseract.js-data/spa/4.0.0/**"
+    ],
+    "extraResources": [
+      {
+        "from": "ejemplo",
+        "to": "ejemplo"
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false,
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "language": "3082",
+      "include": "build/installer.nsh",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    },
+    "asarUnpack": [
+      "node_modules/node-llama-cpp/**",
+      "node_modules/@node-llama-cpp/**"
+    ],
+    "afterPack": "build/after-pack.js"
+  },
+  "devDependencies": {
+    "electron": "^45.2.2",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^5.0.2"
+  },
+  "dependencies": {
+    "@tesseract.js-data/spa": "^1.0.0",
+    "node-llama-cpp": "^3.22.3",
+    "pdfjs-dist": "^6.5.438",
+    "tesseract.js": "^7.0.0"
+  }
+}

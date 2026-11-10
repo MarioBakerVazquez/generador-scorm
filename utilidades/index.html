@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador SCORM · Utilidades</title>
+<link rel="icon" type="image/png" href="/shared/favicon.png">
+<script src="/shared/theme.js"></script>
+<link rel="stylesheet" href="/shared/ui.css">
+<link rel="stylesheet" href="utilidades.css">
+<link rel="stylesheet" href="/shared/md.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="logo"><i id="logoIc"></i>Generador SCORM</div>
+  <nav class="seg apptabs"><a href="/home/" id="tabHome"></a><a href="/editor/" id="tabAut"></a><a href="/index.html" id="tabPlay"></a><a class="on" href="/utilidades/" id="tabUtil"></a></nav>
+  <span class="grow"></span>
+  <button class="btn ghost icon" id="btnTheme" title="Cambiar tema claro/oscuro"></button>
+</header>
+<main class="page">
+  <section class="pagehero"><div class="wrap"><span class="eyebrow">Herramientas · 100 % sin conexión</span><h1>Convertidor de documentos</h1><p>Convierte un PDF o una imagen en texto con formato (Markdown) listo para crear un curso o una evaluación. Todo ocurre en tu computadora, sin internet.</p></div></section>
+  <div class="wrap pullup">
+  <div class="grid">
+    <section class="card" id="cSrc">
+      <h2><span class="n">1</span>Elige el documento</h2>
+      <div class="dz" id="dz">
+        <div class="circle" id="dzIc"></div>
+        <h3>Arrastra aquí tu PDF o imágenes</h3>
+        <p>PDF, PNG o JPG. Puedes subir varios.</p>
+        <div class="btns"><button class="btn primary" id="btnPick"></button><button class="btn" id="btnPaste"></button></div>
+        <input type="file" id="file" multiple accept=".pdf,.png,.jpg,.jpeg,.webp,.bmp" hidden>
+      </div>
+      <ul class="files" id="files"></ul>
+      <div class="tip" id="tip"></div>
+      <label class="chk"><input type="checkbox" id="force"> <span><b>Forzar reconocimiento (OCR)</b><small>Úsalo si el PDF trae texto pero sale con símbolos raros.</small></span></label>
+      <div class="row">
+        <button class="btn primary lg" id="btnGo"></button>
+        <button class="btn lg" id="btnStop" hidden></button>
+      </div>
+      <div class="prog" id="prog" hidden><div class="bar"><i id="barI"></i></div><span id="progT"></span></div>
+    </section>
+
+    <section class="card" id="cOut">
+      <h2><span class="n">2</span>Revisa y mejora el texto</h2>
+      <div class="stats" id="stats">Aún no hay resultado.</div>
+      <textarea id="out" spellcheck="true" placeholder="Aquí aparecerá el texto convertido. Puedes editarlo a mano."></textarea>
+      <div class="row wrap">
+        <button class="btn" id="btnFmt"></button>
+        <button class="btn ai" id="btnAI"></button>
+        <button class="btn ghost" id="btnUndo" hidden></button>
+        <span class="grow"></span>
+        <button class="btn" id="btnCopy"></button>
+        <button class="btn" id="btnDl"></button>
+      </div>
+      <p class="hint" id="aiHint" hidden></p>
+      <div class="cta">
+        <h3>3 · ¿Qué quieres hacer con este texto?</h3>
+        <div class="row wrap">
+          <button class="btn primary" id="btnCurso"></button>
+          <button class="btn primary" id="btnEval"></button>
+        </div>
+      </div>
+    </section>
+  </div>
+  </div>
+</main>
+<div class="toast" id="toast" hidden></div>
+<script src="/shared/icons.js"></script>
+<script src="/shared/aistatus.js"></script>
+<script src="/shared/textclean.js"></script>
+<script src="/shared/pdftools.js"></script>
+<script src="utilidades.js"></script>
+</body>
+</html>

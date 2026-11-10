@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador SCORM · Autoría</title>
+<link rel="icon" type="image/png" href="/shared/favicon.png">
+<script src="/shared/theme.js"></script>
+<link rel="stylesheet" href="/shared/ui.css">
+<link rel="stylesheet" href="editor.css">
+<link rel="stylesheet" href="/shared/md.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="logo"><i id="logoIc"></i>Generador SCORM</div>
+  <nav class="seg apptabs"><a href="/home/" id="tabHome"></a><a class="on" href="/editor/" id="tabAut"></a><a href="/index.html" id="tabPlay"></a><a href="/utilidades/" id="tabUtil"></a></nav>
+  <button class="btn" id="projBtn" aria-haspopup="menu"><span id="projName">Proyecto</span></button>
+  <span class="savechip" id="saveChip"><i class="dot"></i><span id="saveState">—</span></span>
+  <span class="grow"></span>
+  <div class="seg" id="modeSeg" role="group" aria-label="Modo de trabajo"><button data-mode="guiado" title="Asistente paso a paso, con candados suaves"></button><button data-mode="experto" title="Lienzo libre; advierte pero no bloquea"></button></div>
+  <button class="btn ghost icon" id="btnTheme" title="Cambiar tema claro/oscuro"></button>
+  <button class="btn ghost" id="btnStock"></button>
+  <button class="btn" id="btnAlumno"></button>
+  <button class="btn" id="btnReview"></button>
+  <button class="btn primary" id="btnBuild"></button>
+  <input type="file" id="fileJson" accept=".json" hidden>
+</header>
+<div class="shell" id="shell">
+  <aside class="outline" id="leftPanel">
+    <div class="ptabs" id="leftTabs" role="tablist"><button class="on" data-lt="est" id="ltEst">Estructura</button><button data-lt="blq" id="ltBlq">Bloques</button><button data-lt="cap" class="exp-only" id="ltCap">Capas</button></div>
+    <div class="lpane" id="lp-est"><div class="side-h"><span class="kicker">Curso</span><button class="btn ghost sm" id="btnAddModule"></button></div><div class="tree" id="outline"></div></div>
+    <div class="lpane" id="lp-blq" hidden><div class="palette" id="palette"></div></div>
+    <div class="lpane" id="lp-cap" hidden><div class="empty-state"><b>Capas</b><span>Contenido que aparece encima de la pantalla cuando se activa un trigger. Llega junto con la lógica.</span></div></div>
+  </aside>
+  <main class="canvas" id="canvas">
+    <div class="ptools">
+      <div class="seg"><button class="on" data-dev="desktop" id="devFluid"></button><button data-dev="tablet" id="devTablet"></button><button data-dev="mobile" id="devMobile"></button></div>
+      <span class="grow"></span><span class="muted" id="pinfo"></span>
+    </div>
+    <div class="pstage desktop" id="pstage"><div class="device"><iframe id="pframe" title="Lienzo de la lección"></iframe><div class="droplayer" id="dropLayer" hidden><i class="dropline" id="dropLine"></i></div></div></div>
+    <div class="pmsg" id="pmsg" hidden></div>
+  </main>
+  <aside class="props" id="rightPanel">
+    <div class="ptabs" id="rightTabs" role="tablist"><button class="on" data-rt="prop" id="rtProp">Propiedades</button><button data-rt="ia" id="rtIA">IA Asistente</button><button data-rt="log" class="exp-only" id="rtLog">Lógica</button></div>
+    <div class="rpane work" id="rp-prop"><div class="doc" id="form"></div></div>
+    <div class="rpane" id="rp-ia" hidden></div>
+    <div class="rpane" id="rp-log" hidden><div class="empty-state"><b>Lógica / Triggers</b><span>Ej.: «Al hacer clic en X &gt; mostrar capa Y &gt; sumar 10 puntos a la variable». Llega en una versión posterior.</span></div></div>
+  </aside>
+</div>
+<footer class="statusbar" id="statusbar"></footer>
+<aside class="drawer" id="reviewDrawer" hidden><div class="drawer-h"><b>Revisión</b><button class="btn ghost sm icon" id="btnCloseReview" title="Cerrar"></button></div><div id="review"></div></aside>
+<div class="pvmodal" id="pvModal" hidden>
+  <div class="pv-bar"><b>Vista previa como alumno</b><div class="seg"><button class="on" data-pvdev="desktop" id="pvDesk"></button><button data-pvdev="tablet" id="pvTab"></button><button data-pvdev="mobile" id="pvMob"></button></div><span class="grow"></span><button class="btn sm" id="btnClosePv"></button></div>
+  <div class="pv-stage"><iframe id="pvFrame" class="pv-dev desktop" title="Vista previa como alumno"></iframe></div>
+</div>
+<div id="modal" class="modal" hidden><div class="dlg" id="dlg"></div></div>
+<script src="/shared/icons.js"></script>
+<script src="/shared/aistatus.js"></script>
+<script src="/shared/quizparse.js"></script>
+<script src="/shared/bloques.js"></script>
+<script src="/shared/modelo.js"></script>
+<script src="/shared/certificado.js"></script>
+<script src="/shared/schema.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

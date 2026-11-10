@@ -1,0 +1,5 @@
+{
+  "lavado-manos.svg": { "etiquetas": ["higiene", "lavado de manos", "manos"], "descripcion": "Manos bajo el grifo" },
+  "temperatura.svg": { "etiquetas": ["temperatura", "refrigeración", "zona de peligro"], "descripcion": "Termómetro con zonas" },
+  "contaminacion-cruzada.svg": { "etiquetas": ["contaminación cruzada", "crudo", "separación"], "descripcion": "Crudo vs listo para comer" }
+}

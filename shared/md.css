@@ -1,0 +1,100 @@
+/* Capa "Material" común a Inicio, Autoría, Player y Utilidades: toma el look de la pantalla de inicio
+   (degradado turquesa, tarjetas de esquinas amplias, botones en píldora, elevación suave).
+   Se carga DESPUÉS del CSS de cada página para unificar. */
+:root{
+  --r-sm:10px;--r:14px;--r-lg:22px;
+  --grad:linear-gradient(118deg,#0b5a4d 0%,#12806b 42%,#2b7fa3 100%);
+  --el1:0 1px 2px rgba(25,35,35,.08),0 1px 3px 1px rgba(25,35,35,.05);
+  --el2:0 2px 6px rgba(25,35,35,.10),0 6px 18px rgba(25,35,35,.08);
+  --el3:0 10px 30px rgba(20,30,30,.18);
+  --sh-1:var(--el1);--sh-2:var(--el2);
+  --tonal:color-mix(in srgb,var(--brand) 12%,var(--surface));
+}
+
+/* ----- botones: píldora Material ----- */
+.btn{height:40px;padding:0 20px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--brand);font:600 13.5px/1 var(--font);letter-spacing:.01em;box-shadow:none}
+.btn:hover:not(:disabled){background:var(--tonal);border-color:var(--brand)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--on-brand);box-shadow:var(--el1)}
+.btn.primary:hover:not(:disabled){background:var(--brand-h);border-color:var(--brand-h);box-shadow:var(--el2)}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--ink-2);padding:0 14px}
+.btn.ghost:hover:not(:disabled){background:var(--surface-3);border-color:transparent;color:var(--ink)}
+.btn.danger{color:var(--bad)}.btn.danger:hover:not(:disabled){background:var(--bad-bg);border-color:var(--bad)}
+.btn.sm{height:32px;padding:0 14px;font-size:12.5px;border-radius:999px}
+.btn.lg{height:46px;padding:0 26px;font-size:14.5px;border-radius:999px}
+.btn.icon{width:40px;padding:0}.btn.icon.sm{width:32px;padding:0}
+.btn.on{background:var(--tonal);border-color:var(--brand);color:var(--brand)}
+.btn.ai{background:color-mix(in srgb,#7a5bf0 10%,var(--surface));border-color:color-mix(in srgb,#7a5bf0 40%,var(--line));color:#5b3fd0}
+.btn.ai:hover:not(:disabled){background:color-mix(in srgb,#7a5bf0 18%,var(--surface));border-color:#7a5bf0}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.ai{color:#b9a7ff}}
+:root[data-theme=dark] .btn.ai{color:#b9a7ff}
+
+/* ----- campos: contorno redondeado ----- */
+.input,.select,.textarea{height:44px;border-radius:12px;border:1.5px solid var(--line-strong);padding:0 14px;background:var(--surface)}
+.textarea{height:auto;padding:11px 14px;border-radius:14px}
+.select{padding-right:36px}.select.sm{height:34px;border-radius:10px}
+.input:focus,.select:focus,.textarea:focus{border-color:var(--brand)}
+.chips-in{border-radius:12px;border-width:1.5px}
+
+/* ----- tarjetas / superficies ----- */
+.card,.verdict{border-radius:var(--r-lg)}
+.card{border:1px solid var(--line);box-shadow:var(--el1);padding:22px}
+.item,.blk-card,.pk,.ri{border-radius:18px}
+.tile{border-radius:16px;border-width:1.5px}
+.tile:hover{border-color:var(--brand);box-shadow:var(--el1)}
+.dlg{border-radius:28px;box-shadow:var(--el3)}.dlg-f{border-radius:0 0 28px 28px}
+.menu{border-radius:16px;box-shadow:var(--el3)}.menu .mi{border-radius:10px}
+.toast{border-radius:16px}
+.badge,.pill{border-radius:999px}
+.sw{border-radius:999px}
+
+/* ----- barra de aplicación y pestañas ----- */
+.appbar{height:60px;box-shadow:var(--el1);border-bottom:0;position:relative;z-index:5}
+.logo i{background:var(--grad);border-radius:12px;width:34px;height:34px}
+.seg{padding:4px;border-radius:999px;background:var(--surface-3)}
+.seg button,.seg a{height:32px;padding:0 15px;border-radius:999px;font:600 12.5px/1 var(--font)}
+.seg a.on,.seg button.on{background:var(--surface);color:var(--brand);box-shadow:var(--el1)}
+.tabs button.on::after{height:3px;border-radius:3px 3px 0 0}
+.ai-chip{border-radius:999px}
+
+/* ----- banda superior (igual a la de Inicio) ----- */
+.pagehero{position:relative;overflow:hidden;color:#fff;padding:40px 0 92px;background:radial-gradient(900px 380px at 88% -10%,rgba(255,255,255,.22),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(10,30,60,.45),transparent 60%),var(--grad)}
+.pagehero::before,.pagehero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.07)}
+.pagehero::before{width:320px;height:320px;right:-80px;top:-110px}.pagehero::after{width:200px;height:200px;right:200px;bottom:-120px}
+.pagehero .wrap{position:relative;z-index:1}
+.pagehero .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);font:600 12px/1 var(--font)}
+.pagehero h1{margin:14px 0 10px;font:750 clamp(28px,3.6vw,42px)/1.1 var(--font);letter-spacing:-.03em}
+.pagehero p{max-width:640px;font-size:16px;line-height:1.55;color:rgba(255,255,255,.88)}
+.pagehero.slim{padding:18px 0 22px}.pagehero.slim h1{margin:0;font-size:22px}.pagehero.slim p{margin-top:4px;font-size:13.5px}
+.pagehero.slim::before,.pagehero.slim::after{display:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
+
+/* ----- Autoría: mismo lenguaje ----- */
+.outline{background:var(--surface-2)}
+.row,.mod-h{border-radius:14px;min-height:40px}
+.row.sel,.mod-h.sel{background:var(--tonal)}
+.row.sel::before,.mod-h.sel::before{display:none}
+.ico{border-radius:10px;width:28px;height:28px}
+.sec-h .ic{color:var(--brand)}
+.title-input{border-radius:14px}
+.sec-h h3{font-size:13.5px}
+.blk-card{border-radius:18px}.blk-h{background:var(--tonal)}
+.thumb{border-radius:14px}
+
+/* ----- Player ----- */
+.toolbar{background:var(--surface);border-bottom:0;box-shadow:var(--el1);position:relative;z-index:2}
+.stage iframe{border-radius:20px}
+.verdict{border-radius:18px}
+.dz{border-radius:22px}
+.dz .circle,.empty .circle{background:var(--tonal)}
+
+/* barra superior compacta: caben todos los controles del editor */
+.logo{white-space:nowrap}
+.appbar{gap:8px;padding:0 12px}
+.appbar .btn{height:36px;padding:0 14px;font-size:13px}
+.appbar .btn.icon{width:36px;padding:0}
+.appbar .seg a{padding:0 10px}
+
+/* Ventana sin marco nativo (Electron): la barra de la app es la zona de arrastre y deja sitio a los botones de ventana */
+.appbar{-webkit-app-region:drag;padding-right:calc(100vw - env(titlebar-area-x,0px) - env(titlebar-area-width,100vw) + 12px)}
+.appbar button,.appbar a,.appbar select,.appbar input,.appbar .seg,.appbar .ai-chip,.appbar .btn{-webkit-app-region:no-drag}
+.wiz .rail{-webkit-app-region:drag}.wiz .rail button,.wiz .rail a{-webkit-app-region:no-drag}

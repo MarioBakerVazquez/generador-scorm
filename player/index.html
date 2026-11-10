@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Player SCORM 1.2 · Validador</title>
+<link rel="icon" type="image/png" href="/shared/favicon.png">
+<script src="/shared/theme.js"></script>
+<link rel="stylesheet" href="/shared/ui.css">
+<link rel="stylesheet" href="player.css">
+<link rel="stylesheet" href="/shared/md.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="logo"><i id="logoIc"></i>Generador SCORM</div>
+  <nav class="seg apptabs"><a href="/home/" id="tabHome"></a><a href="/editor/" id="tabAut"></a><a class="on" href="/index.html" id="tabPlay"></a><a href="/utilidades/" id="tabUtil"></a></nav>
+  <span class="grow"></span>
+  <button class="btn ghost icon" id="btnTheme" title="Cambiar tema claro/oscuro"></button>
+  <button class="btn" id="btnExport" disabled></button>
+</header>
+
+<section class="pagehero slim"><div class="wrap" style="max-width:none"><h1>Player y validador SCORM 1.2</h1><p>Prueba tu paquete como lo haría un LMS y revisa cada llamada y dato.</p></div></section>
+
+<div class="toolbar">
+  <div class="grp">
+    <span class="lbl">Paquete</span>
+    <select class="select sm" id="pkgSel" title="Paquetes generados"></select>
+    <button class="btn sm" id="btnOpen"></button>
+    <label class="btn sm" id="lblFile"><input type="file" id="fileIn" accept=".zip" hidden></label>
+  </div>
+  <div class="grp">
+    <span class="lbl">Ejecución</span>
+    <button class="btn sm primary" id="btnLaunch" disabled></button>
+    <button class="btn sm" id="btnClose" disabled></button>
+    <button class="btn sm" id="btnResume" disabled></button>
+  </div>
+  <div class="grp">
+    <span class="lbl">Alumno</span>
+    <button class="btn sm" id="btnReset" disabled></button>
+    <button class="btn sm" id="btnStudent" disabled></button>
+  </div>
+  <div class="grp">
+    <span class="lbl">Ventana</span>
+    <div class="seg" id="sizeSeg">
+      <button class="on" data-size="desktop" id="szD"></button><button data-size="tablet" id="szT"></button><button data-size="mobile" id="szM"></button>
+    </div>
+  </div>
+</div>
+
+<div class="chipbar" id="status"></div>
+
+<div class="main">
+  <section class="stage" id="stage"><div class="empty"></div></section>
+  <aside class="side">
+    <div class="tabs" role="tablist">
+      <button class="on" data-t="log" role="tab" id="tLog"></button>
+      <button data-t="data" role="tab" id="tData"></button>
+      <button data-t="val" role="tab" id="tVal"></button>
+    </div>
+    <div class="pane on" id="pane-log">
+      <div class="tools"><label class="chk"><input type="checkbox" id="onlyErr"> Solo errores</label><button id="btnClearLog" class="btn ghost sm">Limpiar</button></div>
+      <div class="scroll" id="logScroll"><table id="logTbl"><thead><tr><th>Hora</th><th>Función</th><th>Elemento</th><th>Valor</th><th>Ret.</th><th>Err</th></tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="pane" id="pane-data"><div class="scroll"><table id="dataTbl"><thead><tr><th>Elemento</th><th>Valor</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="pane" id="pane-val"><div class="scroll" id="valBox"></div></div>
+  </aside>
+</div>
+<script src="/shared/icons.js"></script>
+<script src="/shared/aistatus.js"></script>
+<script src="lms.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

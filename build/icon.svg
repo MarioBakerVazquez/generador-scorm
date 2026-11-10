@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+<defs>
+  <clipPath id="c"><rect x="40" y="40" width="944" height="944" rx="220"/></clipPath>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b5a4d"/><stop offset=".5" stop-color="#12806b"/><stop offset="1" stop-color="#2b7fa3"/></linearGradient>
+  <radialGradient id="h" cx=".85" cy=".1" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".30"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <filter id="s" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#04261f" flood-opacity=".38"/></filter>
+</defs>
+<rect x="40" y="40" width="944" height="944" rx="220" fill="url(#g)"/>
+<rect x="40" y="40" width="944" height="944" rx="220" fill="url(#h)"/>
+<g clip-path="url(#c)"><circle cx="880" cy="170" r="210" fill="#fff" opacity=".07"/><circle cx="150" cy="940" r="190" fill="#000" opacity=".09"/></g>
+<g filter="url(#s)"><g transform="translate(128 96) scale(.8)"><svg viewBox="0 -960 960 960" width="960" height="960"><path fill="#fff" d="M860-313v-252L508-375q-14 8-29 7.5t-29-8.5L88-574q-8-5-11.5-11.5T73-600q0-8 3.5-14.5T88-626l362-198q7-4 14-6t15-2q8 0 15 2t14 6l396 215q8 4 12 11.5t4 15.5v269q0 13-8.5 21.5T890-283q-13 0-21.5-8.5T860-313ZM450-136 220-262q-14-8-22.5-22t-8.5-31v-174l261 143q14 8 29 8t29-8l261-143v174q0 17-8.5 31T738-262L508-136q-7 4-14 6t-15 2q-8 0-15-2t-14-6Z"/></svg></g></g>
+<path fill="#ffd54f" d="M812 168 L836 238 L906 262 L836 286 L812 356 L788 286 L718 262 L788 238 Z"/>
+<path fill="#ffe9a3" d="M680 120 L691 152 L723 163 L691 174 L680 206 L669 174 L637 163 L669 152 Z"/>
+</svg>
